@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agregar-Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar-Editar.Designer.cs">
+      <DependentUpon>Agregar-Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="articulos.cs" />
     <Compile Include="categorias.cs" />
     <Compile Include="ElectronicaNegocio.cs" />
@@ -59,6 +65,9 @@
     <Compile Include="marcas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Agregar-Editar.resx">
+      <DependentUpon>Agregar-Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
