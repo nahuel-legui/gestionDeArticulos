@@ -8,9 +8,22 @@ namespace gestionDeArticulos
 {
     public class marcas
     {
+
         public int IdMarcas { get; set; }
 
         public string descripcionMarca { get; set; }
+
+        public marcas() 
+        {
+            IdMarcas = -1;
+            descripcionMarca = "";
+        }
+        public marcas(int id )
+        {
+            IdMarcas = id;
+            descripcionMarca = "";
+        }
+
 
     }
 }

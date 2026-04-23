@@ -10,6 +10,23 @@ namespace gestionDeArticulos
     {
         public int idCategoria { get; set; }
 
-        public string descripcionCategoria { get; set; }
+        public string descripcionCategoria { get; set; }  
+
+
+        public categorias()
+        {
+            idCategoria = -1;
+            descripcionCategoria = "";
+
+        }
+
+        public categorias(int id)
+        {
+            idCategoria = id;
+            descripcionCategoria = "";
+
+        }
+
+
     }
 }

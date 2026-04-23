@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -92,7 +93,6 @@
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre";
-            
             // 
             // label2
             // 
@@ -111,7 +111,6 @@
             this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Precio";
-            
             // 
             // label4
             // 
@@ -122,11 +121,22 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Codigo";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(501, 371);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(95, 43);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // Agregar_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 509);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -156,5 +166,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
