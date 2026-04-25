@@ -1,0 +1,11 @@
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\bin\Debug\gestionDeArticulos.exe.config
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\bin\Debug\gestionDeArticulos.exe
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\bin\Debug\gestionDeArticulos.pdb
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.csproj.AssemblyReference.cache
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.Agregar_Editar.resources
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.Form1.resources
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.Properties.Resources.resources
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.csproj.GenerateResource.cache
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.csproj.CoreCompileInputs.cache
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.exe
+C:\Users\perez\OneDrive\Documentos\FACULTAT\Programacion 3\gestionDeArticulos-master\gestionDeArticulos-master\gestionDeArticulos\obj\Debug\gestionDeArticulos.pdb
