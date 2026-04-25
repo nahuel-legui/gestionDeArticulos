@@ -24,7 +24,7 @@ namespace gestionDeArticulos
             try
             {
                 //Configuramos la cadena de conexion
-                conexion.ConnectionString = "Server=localhost\\SQLEXPRESS;database=CATALOGO_P3_DB;integrated security=true";
+                conexion.ConnectionString = "Server=localhost\\SQLEXPRESS01;database=CATALOGO_P3_DB;integrated security=true";
                 comando.CommandType=System.Data.CommandType.Text;
                 comando.CommandText = "Select Codigo,Nombre,Descripcion,id from ARTICULOS";
                 comando.Connection = conexion;
