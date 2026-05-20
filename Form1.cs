@@ -35,7 +35,7 @@ namespace gestionDeArticulos
 
                     if (lista.Count > 0)
                     {
-                        label2.Text = lista[0];
+                        
                         pcbImagen.Load(lista[0]);
                     }
                     else

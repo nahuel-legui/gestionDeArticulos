@@ -58,6 +58,33 @@ namespace gestionDeArticulos.Datos
 
         }
 
+        public void ejecutarAccion()
+        {
+            cmd.Connection= con;
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        public void setearParametros(string nombre ,object valor)
+        {
+            cmd.Parameters.AddWithValue(nombre, valor);
+
+        }
+
 
     }
 }

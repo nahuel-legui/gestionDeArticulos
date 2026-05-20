@@ -1,11 +1,12 @@
-﻿using System;
+﻿using gestionDeArticulos.Datos;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using gestionDeArticulos.Datos;
 
 namespace gestionDeArticulos
 {
@@ -17,7 +18,26 @@ namespace gestionDeArticulos
             daoArt = new DaoArticulos();
             return daoArt.listar();
 
+
+        }
+
+        public DataTable rellenarCbCategoria()
+        {
+            daoArt= new DaoArticulos();
+            return daoArt.rellenarCbCategoria();
+        }
+
+        public DataTable rellenarCbMarca()
+        {
+            daoArt=new DaoArticulos();
+            return daoArt.rellenarCbMarca();
+        }
+        public void agregarArticulo(articulos obj)
+        {
+            daoArt = new DaoArticulos();
+            daoArt.agregarArticulo(obj);
         }
 
     }
+
 }
