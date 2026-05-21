@@ -144,5 +144,62 @@ namespace gestionDeArticulos.Datos
             
         }
 
+        public void editarArticulo( articulos obj)
+        {
+            string consulta = "UPDATE ARTICULOS SET Codigo=@codigo, Nombre=@nombre, Descripcion=@descripcion, " +
+                              "IdMarca=@idMarca, IdCategoria=@idCategoria, Precio=@precio WHERE Id=@id";
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+
+                datos.setearConsulta(consulta);
+                datos.setearParametros("@id", obj.idArticulos); // tu clase tiene idArticulos, lo mapeamos a la columna Id
+                datos.setearParametros("@codigo", obj.codigoArticulo);
+                datos.setearParametros("@nombre", obj.nombreArticulo);
+                datos.setearParametros("@descripcion", obj.descripcionArticulo);
+                datos.setearParametros("@idMarca", obj.idMarca.IdMarcas);
+                datos.setearParametros("@idCategoria", obj.idCategoria.idCategoria);
+                datos.setearParametros("@precio", float.Parse(obj.precioArticulo.ToString()));
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+                
+
+        }
+
+        public void eliminarArticulo(int id)
+        {
+            string consulta = "delete from ARTICULOS where id=@id";
+
+            AccesoDatos datos= new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(consulta);
+                datos.setearParametros("@id",id);
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex ;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
     }
 }

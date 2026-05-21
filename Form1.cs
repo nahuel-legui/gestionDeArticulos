@@ -18,8 +18,15 @@ namespace gestionDeArticulos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            listarGrilla();
+        }
+        private void listarGrilla()
+        {
             NegocioArticulo negocio = new NegocioArticulo();
             dgvArticulos.DataSource = negocio.listar();
+            dgvArticulos.Columns[4].Visible = false;
+            dgvArticulos.Columns[5].Visible = false;
+            dgvArticulos.Columns[6].Visible = false;
         }
 
         private void dgvArticulos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -95,6 +102,17 @@ namespace gestionDeArticulos
                 NegocioArticulo negocio = new NegocioArticulo();
                 dgvArticulos.DataSource = negocio.listar();
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            articulos seleccionado = (articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            NegocioArticulo Neg=new NegocioArticulo();
+
+            Neg.eliminarArticulo(seleccionado.idArticulos);
+            MessageBox.Show("Producto eliminado correctamente");
+            listarGrilla();
+
         }
     }
     }

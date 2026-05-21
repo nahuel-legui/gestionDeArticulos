@@ -73,48 +73,25 @@ namespace gestionDeArticulos
                 return;
             }
 
+                
+            articulo.codigoArticulo = txtCodigo.Text;
+            articulo.nombreArticulo = txtNombre.Text;
+            articulo.descripcionArticulo = txtDescripcion.Text;
+            articulo.idMarca= new marcas();
+            articulo.idCategoria=new categorias();
+            articulo.idMarca.IdMarcas = int.Parse(cbMarca.SelectedValue.ToString());
+            articulo.idCategoria.idCategoria = int.Parse(cbCategoria.SelectedValue.ToString());
+            articulo.precioArticulo = float.Parse(txtPrecio.Text);
             if (articulo == null)
             {
-                articulos obj= new articulos();
-                obj.codigoArticulo = txtCodigo.Text;
-                obj.nombreArticulo = txtNombre.Text;
-                obj.descripcionArticulo = txtDescripcion.Text;
-                obj.idMarca.IdMarcas=int.Parse(cbMarca.SelectedValue.ToString());
-                obj.idCategoria.idCategoria=int.Parse(cbCategoria.SelectedValue.ToString());
-                obj.precioArticulo = float.Parse(txtPrecio.Text);
-                artNegocio.agregarArticulo(obj);
+                artNegocio.agregarArticulo(articulo);
 
             }
             else
-                //editarArticulo();
+                artNegocio.editarArticulo(articulo);
 
             this.Close();
         }
-
-        
-
-        /*private void editarArticulo()
-        {
-            string consulta = "UPDATE ARTICULOS SET Codigo=@codigo, Nombre=@nombre, Descripcion=@descripcion, " +
-                              "IdMarca=@idMarca, IdCategoria=@idCategoria, Precio=@precio WHERE Id=@id";
-
-            using (SqlConnection con = new SqlConnection(ruta))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(consulta, con);
-                cmd.Parameters.AddWithValue("@id", articulo.idArticulos); // tu clase tiene idArticulos, lo mapeamos a la columna Id
-                cmd.Parameters.AddWithValue("@codigo", txtCodigo.Text.Trim());
-                cmd.Parameters.AddWithValue("@nombre", txtNombre.Text.Trim());
-                cmd.Parameters.AddWithValue("@descripcion", txtDescripcion.Text.Trim());
-                cmd.Parameters.AddWithValue("@idMarca", cbMarca.SelectedValue);
-                cmd.Parameters.AddWithValue("@idCategoria", cbCategoria.SelectedValue);
-                cmd.Parameters.AddWithValue("@precio", float.Parse(txtPrecio.Text.Trim()));
-
-                int fila = cmd.ExecuteNonQuery();
-                MessageBox.Show(fila > 0 ? "Artículo editado correctamente" : "No se pudo editar el artículo");
-            }
-        }*/
-
 
 
         private bool verificarVacio()

@@ -38,6 +38,18 @@ namespace gestionDeArticulos
             daoArt.agregarArticulo(obj);
         }
 
+        public void editarArticulo(articulos obj)
+        {
+            daoArt = new DaoArticulos();
+            daoArt.editarArticulo(obj);
+
+        }
+        public void eliminarArticulo(int id)
+        {
+            daoArt = new DaoArticulos();
+            daoArt.eliminarArticulo(id);
+        }
+
     }
 
 }
