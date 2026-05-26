@@ -35,6 +35,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +82,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(529, 481);
+            this.btnAgregar.Location = new System.Drawing.Point(360, 481);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(93, 38);
             this.btnAgregar.TabIndex = 6;
@@ -109,12 +110,23 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(515, 481);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(93, 38);
+            this.btnDetalle.TabIndex = 9;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1105, 609);
+            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }
 

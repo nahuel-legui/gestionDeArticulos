@@ -114,5 +114,18 @@ namespace gestionDeArticulos
             listarGrilla();
 
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                articulos seleccionado = (articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                Detalle detalle = new Detalle(seleccionado);
+                detalle.ShowDialog();
+
+                NegocioArticulo negocio = new NegocioArticulo();
+                dgvArticulos.DataSource = negocio.listar();
+            }
+        }
     }
     }

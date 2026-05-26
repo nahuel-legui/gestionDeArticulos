@@ -55,6 +55,12 @@
     <Compile Include="Datos\AccesoDatos.cs" />
     <Compile Include="Datos\DaoArticulos.cs" />
     <Compile Include="Datos\DaoImagenes.cs" />
+    <Compile Include="Detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle.Designer.cs">
+      <DependentUpon>Detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dominio\articulos.cs" />
     <Compile Include="Dominio\categorias.cs" />
     <Compile Include="Negocio\NegocioArticulo.cs" />
@@ -71,6 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Agregar-Editar.resx">
       <DependentUpon>Agregar-Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle.resx">
+      <DependentUpon>Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
