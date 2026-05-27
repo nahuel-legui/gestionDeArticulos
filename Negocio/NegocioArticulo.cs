@@ -49,6 +49,16 @@ namespace gestionDeArticulos
             daoArt = new DaoArticulos();
             daoArt.eliminarArticulo(id);
         }
+        public List<articulos> listarXFiltroNombre(string nombre)
+        {
+            daoArt = new DaoArticulos();
+            return daoArt.listarXFiltroNombre(nombre);
+        }
+        public List<articulos> listarXMarcaXCategoria(int IdMarca, int IdCategoria)
+        {
+            daoArt = new DaoArticulos();
+            return daoArt.listarXMarcaXCategoria(IdMarca, IdCategoria);
+        }
 
     }
 

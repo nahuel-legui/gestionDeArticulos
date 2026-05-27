@@ -1,6 +1,7 @@
 ﻿using gestionDeArticulos.Negocio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace gestionDeArticulos
         public Form1()
         {
             InitializeComponent();
+
         }
 
         public int indiceActual = 0;
@@ -19,6 +21,7 @@ namespace gestionDeArticulos
         private void Form1_Load(object sender, EventArgs e)
         {
             listarGrilla();
+            cargarCombos();
         }
         private void listarGrilla()
         {
@@ -87,8 +90,7 @@ namespace gestionDeArticulos
             agregar.ShowDialog();
 
             // refrescar grilla
-            NegocioArticulo negocio = new NegocioArticulo();
-            dgvArticulos.DataSource = negocio.listar();
+            listarGrilla();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -99,8 +101,7 @@ namespace gestionDeArticulos
                 Agregar_Editar editar = new Agregar_Editar(seleccionado);
                 editar.ShowDialog();
 
-                NegocioArticulo negocio = new NegocioArticulo();
-                dgvArticulos.DataSource = negocio.listar();
+                listarGrilla();
             }
         }
 
@@ -123,9 +124,58 @@ namespace gestionDeArticulos
                 Detalle detalle = new Detalle(seleccionado);
                 detalle.ShowDialog();
 
-                NegocioArticulo negocio = new NegocioArticulo();
-                dgvArticulos.DataSource = negocio.listar();
+                listarGrilla();
             }
+        }
+
+        private void txtNombreFiltro_TextChanged(object sender, EventArgs e)
+        {
+            NegocioArticulo neg = new NegocioArticulo();
+            dgvArticulos.DataSource=neg.listarXFiltroNombre(txtNombreFiltro.Text);
+
+
+        }
+        private void cargarCombos()
+        {
+            NegocioArticulo neArt = new NegocioArticulo();
+            DataTable dtMarca = neArt.rellenarCbMarca();
+            DataRow filaDefault = dtMarca.NewRow();
+            filaDefault["Id"] = 0;
+            filaDefault["Descripcion"] = "Elegir Marca";
+            dtMarca.Rows.InsertAt(filaDefault,0);
+            cbMarcaFiltro.DataSource = dtMarca;
+            cbMarcaFiltro.ValueMember = "Id";
+            cbMarcaFiltro.DisplayMember = "Descripcion";
+
+            DataTable dtCategoria = neArt.rellenarCbCategoria();
+            DataRow filaDefaultC = dtCategoria.NewRow();
+            filaDefaultC["Id"] = 0;
+            filaDefaultC["Descripcion"] = "Elegir Categoria";
+            dtCategoria.Rows.InsertAt(filaDefaultC, 0);
+            cbCategoriaFiltro.DataSource = dtCategoria;
+            cbCategoriaFiltro.ValueMember = "Id";
+            cbCategoriaFiltro.DisplayMember = "Descripcion";
+        }
+
+        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
+        {
+            listarGrilla();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            int idMarca = int.Parse (cbMarcaFiltro.SelectedValue.ToString());
+            int idCategoria= int.Parse(cbCategoriaFiltro.SelectedValue.ToString());
+            if (idMarca == 0 && idCategoria == 0) {
+
+                MessageBox.Show("DEBE ELEGIR AL MENOS UNA MARCA O UNA CATEGORIA");
+            }
+            else
+            {
+                NegocioArticulo neg= new NegocioArticulo();
+                dgvArticulos.DataSource = neg.listarXMarcaXCategoria(idMarca,idCategoria);
+            }
+
         }
     }
     }

@@ -201,5 +201,103 @@ namespace gestionDeArticulos.Datos
 
         }
 
+        public List<articulos> listarXFiltroNombre(string nombre)
+        {
+            //tiene q devolver una lista 
+            List<articulos> lista = new List<articulos>();
+
+            AccesoDatos da = new AccesoDatos();
+
+            try
+            {
+                string consulta = $"Select Codigo,Nombre,Descripcion,id from ARTICULOS where Nombre Like '{nombre}%'";
+
+                da.setearConsulta(consulta);
+         
+                SqlDataReader lector = da.ejecutarLectura();
+
+                while (lector.Read())
+                {
+                    articulos aux = new articulos();
+                    aux.codigoArticulo = (string)lector["Codigo"];
+                    aux.nombreArticulo = (string)lector["Nombre"];
+                    aux.descripcionArticulo = (string)lector["Descripcion"];
+                    aux.idArticulos = int.Parse(lector["id"].ToString());
+
+
+                    lista.Add(aux);
+
+                }
+                da.cerrarConexion();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                //Me permite no que se crashee la app y me diga el error que pueda tener
+                throw ex;
+            }
+
+
+        }
+
+        public List<articulos> listarXMarcaXCategoria(int IdMarca, int IdCategoria)
+        {
+            //tiene q devolver una lista 
+            List<articulos> lista = new List<articulos>();
+
+            AccesoDatos da = new AccesoDatos();
+            try
+            {
+                string consulta;
+                if (IdMarca != 0 && IdCategoria!=0) { 
+                
+                    consulta = "Select Codigo,Nombre,Descripcion,id from ARTICULOS where IdMarca=@Marca and IdCategoria=@Categoria";
+                    da.setearConsulta(consulta);
+                    da.setearParametros("@Marca",IdMarca);
+                    da.setearParametros("@Categoria", IdCategoria);
+                }
+                else if(IdMarca != 0 && IdCategoria==0) 
+                {
+
+                    consulta = "Select Codigo,Nombre,Descripcion,id from ARTICULOS where IdMarca=@Marca ";
+                    da.setearConsulta(consulta);
+                    da.setearParametros("@Marca", IdMarca);
+                }
+                else if(IdMarca==0 && IdCategoria != 0)
+                {
+                    
+                    consulta = "Select Codigo,Nombre,Descripcion,id from ARTICULOS where IdCategoria=@Categoria";
+                    da.setearConsulta(consulta);
+                    da.setearParametros("@Categoria", IdCategoria);
+                }
+               
+
+                
+                SqlDataReader lector = da.ejecutarLectura();
+
+                while (lector.Read())
+                {
+                    articulos aux = new articulos();
+                    aux.codigoArticulo = (string)lector["Codigo"];
+                    aux.nombreArticulo = (string)lector["Nombre"];
+                    aux.descripcionArticulo = (string)lector["Descripcion"];
+                    aux.idArticulos = int.Parse(lector["id"].ToString());
+
+
+                    lista.Add(aux);
+
+                }
+                da.cerrarConexion();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                //Me permite no que se crashee la app y me diga el error que pueda tener
+                throw ex;
+            }
+
+
+        }
+
     }
 }
